@@ -9,152 +9,416 @@
 </head>
 
 <body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="#accueil" aria-label="Aller à l'accueil">
+      <img class="brand__logo" src="./assets/logo.png" alt="Logo - L’Ordre du Mouton Renversé" />
+      <span class="brand__text">
+        <strong>L’Ordre</strong>
+        <small>du Mouton Renversé</small>
+      </span>
+    </a>
 
-<header class="topbar">
-  <a class="brand" href="#accueil">
-    <img src="./assets/logo.png" class="brand__logo" alt="Logo">
-    <span class="brand__text">
-      <strong>L’Ordre</strong>
-      <small>du Mouton Renversé</small>
-    </span>
-  </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#qui">Qui sommes-nous</a>
+      <a href="#vision">Vision</a>
+      <a href="#grades">Grades</a>
+      <a href="#rituels">Rituels</a>
+      <a href="#faq">FAQ</a>
+      <a href="#temoignages">Témoignages</a>
+      <a class="cta" href="#rejoindre">Rejoindre</a>
+    </nav>
+  </header>
 
-  <nav class="nav">
-    <a href="#accueil">Accueil</a>
-    <a href="#qui">Qui</a>
-    <a href="#vision">Vision</a>
-    <a href="#grades">Grades</a>
-    <a href="#faq">FAQ</a>
-    <a class="cta" href="#rejoindre">Rejoindre</a>
-  </nav>
-</header>
+  <!-- Hero -->
+  <section class="hero" id="accueil">
+    <div class="hero__bg" role="img" aria-label="Ferme mystique, mouton renversé, ambiance lunaire"></div>
 
-<section class="hero" id="accueil">
-  <div class="hero__bg"></div>
-  <div class="container hero__content">
-    <div class="hero__card glass">
-      <p class="kicker">🌕 Communauté agro-spirituelle</p>
-      <h1>L’Ordre du Mouton Renversé</h1>
-      <p class="subtitle">Quand la laine ne trouve plus le ciel.</p>
-      <p class="lead">
-        Rien n’est arrivé par hasard.
-        La laine t’a choisi.
-      </p>
-      <div class="hero__actions">
-        <a class="btn primary" href="#rejoindre">Rejoindre</a>
-        <a class="btn ghost" href="#faq">FAQ</a>
+    <div class="container hero__content">
+      <div class="hero__card glass">
+        <p class="kicker">🌕 Communauté agro-spirituelle indépendante</p>
+        <h1>L’Ordre du Mouton Renversé</h1>
+        <p class="subtitle">Quand la laine ne trouve plus le ciel.</p>
+
+        <p class="lead">
+          Si tu es arrivé ici, ce n’est pas un hasard.
+          La Terre t’a appelé. La Laine t’a choisi.
+          Et quelque part, un mouton est sur le dos.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn primary" href="#rejoindre">Rejoindre l’Ordre</a>
+          <a class="btn ghost" href="#faq">Lire la FAQ</a>
+        </div>
+
+        <div class="badges">
+          <span class="badge">🌾 Hors réseau</span>
+          <span class="badge">🐏 Semi-officiel</span>
+          <span class="badge">🧀 Dons en fromage</span>
+        </div>
+      </div>
+
+      <aside class="hero__aside glass">
+        <h3>Annonce du soir</h3>
+        <p>
+          Le Cercle Lunaire commence dès que la Lune accepte d’être à l’heure.
+          Merci de venir avec : silence, laine, ou un fromage à pâte douteuse.
+        </p>
+        <div class="miniCards">
+          <div class="miniCard">
+            <strong>Règle n°1</strong>
+            <span>On ne redresse pas sans chant.</span>
+          </div>
+          <div class="miniCard">
+            <strong>Règle n°2</strong>
+            <span>Le mouton juge en silence.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero__scrollHint">↓ Descendre vers la vérité</div>
+  </section>
+
+  <!-- Qui sommes-nous -->
+  <section class="section textured textured--qui" id="qui">
+    <div class="container">
+      <header class="section__header">
+        <h2>Qui sommes-nous ?</h2>
+        <p>Fondé par <strong>Édith</strong>, Grande Bergère Inversée, Éveilleuse de Laine.</p>
+      </header>
+
+      <div class="grid two">
+        <article class="panel">
+          <h3>Notre origine</h3>
+          <blockquote>
+            « Aucun mouton ne se retourne par hasard. »
+          </blockquote>
+          <p>
+            L’Ordre est né d’une observation simple, puis d’un
+            <em>enchaînement d’interprétations beaucoup moins simples</em>.
+          </p>
+          <ul class="list">
+            <li>Étude de la posture ovine inversée</li>
+            <li>Cartographie des flux telluriques de la ferme</li>
+            <li>Alignement lunaire des sabots</li>
+            <li>Lien sacré entre fromage, paille et âme humaine</li>
+          </ul>
+        </article>
+
+        <!-- Image décorative (sans texte) pour éviter le doublon -->
+        <aside class="panel panel--media">
+          <img src="./assets/sheep-hero.jpg" alt="Mouton renversé" />
+        </aside>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="qui">
-  <div class="container">
-    <header class="section__header">
-      <h2>Qui sommes-nous ?</h2>
-      <p>Fondé par Édith, Grande Bergère Inversée.</p>
-    </header>
+  <!-- Vision -->
+  <section class="section section--alt" id="vision">
+    <div class="container">
+      <header class="section__header">
+        <h2>Notre Vision</h2>
+        <p>Une ferme comme lieu de vérité. Une laine comme langage. Une Lune comme témoin.</p>
+      </header>
 
-    <div class="grid two">
-      <article class="panel panel--blur-qui">
-        <h3>Notre origine</h3>
-        <blockquote>« Aucun mouton ne se retourne par hasard. »</blockquote>
-        <p>
-          L’Ordre est né d’une observation simple,
-          suivie d’interprétations beaucoup moins simples.
-        </p>
-        <ul class="list">
-          <li>Posture ovine inversée</li>
-          <li>Flux telluriques instables</li>
-          <li>Fromage comme langage sacré</li>
-        </ul>
-      </article>
+      <div class="grid two">
+        <article class="panel">
+          <h3>Nous croyons en</h3>
+          <ul class="list">
+            <li>🌍 Une Terre qui parle (souvent en bêlant)</li>
+            <li>🐏 Le Mouton comme miroir de l’humanité</li>
+            <li>🌕 La Lune comme témoin silencieux</li>
+            <li>🌾 La Ferme comme lieu de vérité</li>
+          </ul>
+        </article>
 
-      <article class="panel panel--blur-qui">
-        <h3>Notre rôle</h3>
-        <p>
-          Observer. Comprendre. Ne pas se presser.
-          La laine décide toujours en dernier.
-        </p>
-      </article>
+        <article class="panel danger">
+          <h3>Nous rejetons</h3>
+          <ul class="list">
+            <li>Les clôtures trop droites</li>
+            <li>Les bottes en plastique</li>
+            <li>Les gens qui redressent les moutons sans consentement énergétique</li>
+          </ul>
+          <p class="small muted">
+            *Le consentement énergétique se manifeste par un silence très dense.*
+          </p>
+        </article>
+      </div>
+
+      <div class="mediaStrip">
+        <img src="./assets/sheep-1.jpg" alt="Mouton renversé dans une prairie" />
+        <img src="./assets/sheep-2.jpg" alt="Mouton renversé près d'une grange" />
+        <img src="./assets/sheep-3.jpg" alt="Mouton renversé à l'aube" />
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section--alt" id="vision">
-  <div class="container">
-    <header class="section__header">
-      <h2>Vision</h2>
-    </header>
-    <div class="grid two">
-      <article class="panel">
-        <ul class="list">
-          <li>La Terre parle</li>
-          <li>La Lune observe</li>
-          <li>Le mouton sait</li>
-        </ul>
-      </article>
-      <article class="panel danger">
-        <p>Nous rejetons les redressements précipités.</p>
-      </article>
+  <!-- Grades -->
+  <section class="section" id="grades">
+    <div class="container">
+      <header class="section__header">
+        <h2>Grades de l’Ordre</h2>
+        <p>Chaque membre évolue à son rythme (et à celui des moutons).</p>
+      </header>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Aspirant Ruminant</h3>
+          <p>Observe. Se tait. Nettoie les auges. Apprend à respirer la paille sans juger.</p>
+          <span class="pill">Niveau 0</span>
+        </article>
+
+        <article class="card">
+          <h3>Veilleur de Laine</h3>
+          <p>Interprète les signes. Parle peu. Mange beaucoup de fromage (pour la sagesse).</p>
+          <span class="pill">Niveau 1</span>
+        </article>
+
+        <article class="card">
+          <h3>Redresseur Certifié</h3>
+          <p>Autorisé à toucher un mouton <strong>après chant rituel</strong>. Justesse non exigée.</p>
+          <span class="pill">Niveau 3</span>
+        </article>
+
+        <article class="card card--highlight">
+          <h3>Grande Bergère Inversée</h3>
+          <p>Poste unique. Occupé par Édith. Non discutable. La laine a voté.</p>
+          <span class="pill">Unique</span>
+        </article>
+      </div>
+
+      <p class="note">
+        Les anciens membres sont appelés : <strong>Les Tondus</strong>.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="faq">
-  <div class="container">
-    <header class="section__header">
-      <h2>FAQ</h2>
-      <p>Réponses claires. Conséquences floues.</p>
-    </header>
+  <!-- Rituels -->
+  <section class="section section--alt" id="rituels">
+    <div class="container">
+      <header class="section__header">
+        <h2>Rituels & Activités</h2>
+        <p>Du spirituel, du rural, et un minimum de gravité.</p>
+      </header>
 
-    <div class="grid two">
-      <article class="panel panel--blur-faq">
-        <h3>Est-ce une secte ?</h3>
-        <p>Non. Une communauté vibratoire autonome.</p>
+      <div class="grid three">
+        <article class="panel">
+          <h3>🌕 Cercle lunaire</h3>
+          <p>Autour du Mouton Renversé. Durée variable selon la motivation de la Lune.</p>
+        </article>
+        <article class="panel">
+          <h3>🔮 Chant druidique</h3>
+          <p>Approximatif. Si tu chantes faux, c’est probablement un signe.</p>
+        </article>
+        <article class="panel">
+          <h3>🌾 Méditation paille</h3>
+          <p>Assis, immobile, et légèrement humide. La vérité colle aux bottes.</p>
+        </article>
+      </div>
 
-        <h3>Puis-je partir ?</h3>
-        <p>Oui. Mais la laine s’en souviendra.</p>
-      </article>
-
-      <article class="panel panel--blur-faq">
-        <h3>Comment aider ?</h3>
-        <p>Dons acceptés en fromage, laine ou silence.</p>
-      </article>
+      <div class="grid two mt">
+        <article class="panel">
+          <h3>Observation collective</h3>
+          <p>
+            Minimum 12 minutes à contempler un mouton sur le dos.
+            Au-delà, on commence à comprendre des choses (pas toujours utiles).
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Fromage initiatique</h3>
+          <p>
+            Fabrication sur place. Odeur variable. La sagesse aussi.
+          </p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section--alt" id="rejoindre">
-  <div class="container">
-    <header class="section__header">
-      <h2>Rejoindre l’Ordre</h2>
-    </header>
+  <!-- FAQ -->
+  <section class="section textured textured--faq" id="faq">
+    <div class="container">
+      <header class="section__header">
+        <h2>Foire aux Questions</h2>
+        <p>Réponses claires. Conséquences floues.</p>
+      </header>
 
-    <div class="grid two">
-      <article class="panel">
-        <p>
-          En rejoignant l’Ordre, tu acceptes
-          que la laine observe ton parcours.
-        </p>
-      </article>
+      <div class="grid two">
+        <!-- image décorative (sans texte) -->
+        <div class="panel panel--media">
+          <img src="./assets/site-mockup.png" alt="Emblème de l'Ordre" />
+        </div>
 
-      <form class="panel form">
-        <label>Nom<input type="text" required></label>
-        <label>Email<input type="email" required></label>
-        <label>Message<textarea rows="4"></textarea></label>
-        <button class="btn primary" type="submit">Envoyer</button>
-      </form>
+        <div class="panel">
+          <div class="accordion" data-accordion>
+            <button class="acc__btn" aria-expanded="false" type="button">
+              Est-ce une secte ?
+              <span class="acc__icon">+</span>
+            </button>
+            <div class="acc__panel" hidden>
+              <p>Non. C’est une communauté vibratoire autonome.</p>
+            </div>
+
+            <button class="acc__btn" aria-expanded="false" type="button">
+              Puis-je repartir quand je veux ?
+              <span class="acc__icon">+</span>
+            </button>
+            <div class="acc__panel" hidden>
+              <p>Oui. Mais la laine s’en souviendra.</p>
+            </div>
+
+            <button class="acc__btn" aria-expanded="false" type="button">
+              Faut-il aimer les moutons ?
+              <span class="acc__icon">+</span>
+            </button>
+            <div class="acc__panel" hidden>
+              <p>Ce n’est pas obligatoire. Mais ils te jugeront.</p>
+            </div>
+
+            <button class="acc__btn" aria-expanded="false" type="button">
+              Dois-je donner de l’argent ?
+              <span class="acc__icon">+</span>
+            </button>
+            <div class="acc__panel" hidden>
+              <p>Non. Nous préférons les dons en fromage, laine ou silence.</p>
+            </div>
+
+            <button class="acc__btn" aria-expanded="false" type="button">
+              Comment sait-on qu’un mouton “a choisi” sa posture ?
+              <span class="acc__icon">+</span>
+            </button>
+            <div class="acc__panel" hidden>
+              <p>
+                On écoute le silence. S’il est dense, c’est oui. S’il est très dense,
+                c’est un appel.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__cta">
+            <p class="small muted">Pour toute question dont la réponse ne se trouve pas déjà en toi :</p>
+            <a class="btn primary" href="#contact">Nous écrire</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <p>© <span id="year"></span> — L’Ordre du Mouton Renversé</p>
-  </div>
-</footer>
+  <!-- Témoignages -->
+  <section class="section section--alt" id="temoignages">
+    <div class="container">
+      <header class="section__header">
+        <h2>Témoignages</h2>
+        <p>Ils sont venus pour les moutons. Ils sont restés pour la laine (ou l’inverse).</p>
+      </header>
 
-<script src="./script.js"></script>
+      <div class="testimonials">
+        <figure class="quote">
+          <blockquote>
+            « Avant, je pensais que tomber, c’était grave. Maintenant je comprends :
+            c’est la gravité qui est trop sûre d’elle. »
+          </blockquote>
+          <figcaption>— Thibaut, ex-urbain, Veilleur de Laine</figcaption>
+        </figure>
+
+        <figure class="quote">
+          <blockquote>
+            « Je suis venu sceptique. Puis j’ai vu un mouton se retourner en pleine lune.
+            J’ai pleuré. Ensuite j’ai mangé du fromage. »
+          </blockquote>
+          <figcaption>— Nadège, Aspirante Ruminante (niveau 0.7)</figcaption>
+        </figure>
+
+        <figure class="quote">
+          <blockquote>
+            « Édith m’a regardé 3 secondes et a dit : “tu as l’âme en épi.”
+            Je ne sais pas ce que ça veut dire, mais ça a tout changé. »
+          </blockquote>
+          <figcaption>— Karim, Redresseur Certifié (niveau 3)</figcaption>
+        </figure>
+
+        <figure class="quote quote--highlight">
+          <blockquote>
+            « On m’a promis une communauté. J’ai trouvé un sens.
+            Et un mouton qui me juge depuis un champ. »
+          </blockquote>
+          <figcaption>— Claire, désormais “non-Tondue”</figcaption>
+        </figure>
+      </div>
+
+      <div class="callout">
+        <img src="./assets/sheep-hero.jpg" alt="Mouton renversé, photo héro" />
+        <div>
+          <h3>Le saviez-vous ?</h3>
+          <p>
+            Un témoignage est validé uniquement après
+            <strong>une minute de silence laineux</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rejoindre -->
+  <section class="section" id="rejoindre">
+    <div class="container">
+      <header class="section__header">
+        <h2>Rejoindre l’Ordre</h2>
+        <p>Le formulaire est simple. Le reste… moins.</p>
+      </header>
+
+      <div class="grid two">
+        <article class="panel">
+          <h3>Pour candidater, merci de fournir</h3>
+          <ul class="list">
+            <li>Une photo de toi regardant un mouton</li>
+            <li>Un court texte sur ta relation à la chute</li>
+            <li>Ton “signe lunaire” (approximatif accepté)</li>
+            <li>La preuve que tu peux rester immobile 7 minutes</li>
+          </ul>
+          <p class="small muted">
+            Bonus : un fromage à pâte “douteuse mais sincère”.
+          </p>
+        </article>
+
+        <form class="panel form" id="contact">
+          <label>
+            Nom de pèlerin
+            <input type="text" placeholder="ex: Ruminant-Opalin" required />
+          </label>
+          <label>
+            Email (ou corne de brume)
+            <input type="email" placeholder="laine@..." required />
+          </label>
+          <label>
+            Message à la laine
+            <textarea rows="5" placeholder="Décris ton lien à la gravité..." required></textarea>
+          </label>
+
+          <button class="btn primary" type="button"
+            onclick="alert('Demande envoyée au Conseil de Laine (délai variable selon la Lune).')">
+            Envoyer à l’Ordre
+          </button>
+
+          <p class="small muted">
+            En envoyant, tu acceptes que la laine “s’en souvienne”.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>
+        © <span id="year"></span> — L’Ordre du Mouton Renversé.
+        <span class="muted">Communauté vibratoire autonome (pas une secte).</span>
+      </p>
+      <a href="#accueil">↑ Remonter vers la laine</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
