@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>L’Ordre du Mouton Renversé</title>
   <meta name="description" content="Communauté agro-spirituelle indépendante. Quand la laine ne trouve plus le ciel." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-  <!-- Top bar -->
+  <!-- Top bar (desktop) -->
   <header class="topbar">
     <a class="brand" href="#accueil" aria-label="Aller à l'accueil">
-      <img class="brand__logo" src="assets/logo.png" alt="Logo - L’Ordre du Mouton Renversé" />
+      <img class="brand__logo" src="./assets/logo.png" alt="Logo - L’Ordre du Mouton Renversé" />
       <span class="brand__text">
         <strong>L’Ordre</strong>
         <small>du Mouton Renversé</small>
@@ -29,23 +29,7 @@
       <a href="#temoignages">Témoignages</a>
       <a class="cta" href="#rejoindre">Rejoindre</a>
     </nav>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
   </header>
-
-  <!-- Mobile menu -->
-  <div class="mobileMenu" id="mobileMenu" hidden>
-    <a href="#accueil">Accueil</a>
-    <a href="#qui">Qui sommes-nous</a>
-    <a href="#vision">Vision</a>
-    <a href="#grades">Grades</a>
-    <a href="#rituels">Rituels</a>
-    <a href="#faq">FAQ</a>
-    <a href="#temoignages">Témoignages</a>
-    <a href="#rejoindre" class="cta">Rejoindre</a>
-  </div>
 
   <!-- Hero -->
   <section class="hero" id="accueil">
@@ -124,7 +108,7 @@
         </article>
 
         <aside class="panel panel--media">
-          <img src="assets/page-qui.png" alt="Visuel 'Qui sommes-nous' (style parchemin)" />
+          <img src="./assets/page-qui.png" alt="Visuel 'Qui sommes-nous' (style parchemin)" />
           <p class="caption">Visuel de rubrique (remplace l’image par ta version générée).</p>
         </aside>
       </div>
@@ -164,9 +148,9 @@
       </div>
 
       <div class="mediaStrip">
-        <img src="assets/sheep-1.jpg" alt="Mouton renversé dans une prairie" />
-        <img src="assets/sheep-2.jpg" alt="Mouton renversé près d'une grange" />
-        <img src="assets/sheep-3.jpg" alt="Mouton renversé à l'aube" />
+        <img src="./assets/sheep-1.jpg" alt="Mouton renversé dans une prairie" />
+        <img src="./assets/sheep-2.jpg" alt="Mouton renversé près d'une grange" />
+        <img src="./assets/sheep-3.jpg" alt="Mouton renversé à l'aube" />
       </div>
     </div>
   </section>
@@ -262,13 +246,13 @@
 
       <div class="grid two">
         <div class="panel panel--media">
-          <img src="assets/page-faq.png" alt="Visuel FAQ (style parchemin)" />
+          <img src="./assets/page-faq.png" alt="Visuel FAQ (style parchemin)" />
           <p class="caption">Visuel de rubrique FAQ (remplace l’image par ta version générée).</p>
         </div>
 
         <div class="panel">
           <div class="accordion" data-accordion>
-            <button class="acc__btn" aria-expanded="false">
+            <button class="acc__btn" aria-expanded="false" type="button">
               Est-ce une secte ?
               <span class="acc__icon">+</span>
             </button>
@@ -276,7 +260,7 @@
               <p>Non. C’est une communauté vibratoire autonome.</p>
             </div>
 
-            <button class="acc__btn" aria-expanded="false">
+            <button class="acc__btn" aria-expanded="false" type="button">
               Puis-je repartir quand je veux ?
               <span class="acc__icon">+</span>
             </button>
@@ -284,7 +268,7 @@
               <p>Oui. Mais la laine s’en souviendra.</p>
             </div>
 
-            <button class="acc__btn" aria-expanded="false">
+            <button class="acc__btn" aria-expanded="false" type="button">
               Faut-il aimer les moutons ?
               <span class="acc__icon">+</span>
             </button>
@@ -292,7 +276,7 @@
               <p>Ce n’est pas obligatoire. Mais ils te jugeront.</p>
             </div>
 
-            <button class="acc__btn" aria-expanded="false">
+            <button class="acc__btn" aria-expanded="false" type="button">
               Dois-je donner de l’argent ?
               <span class="acc__icon">+</span>
             </button>
@@ -300,7 +284,7 @@
               <p>Non. Nous préférons les dons en fromage, laine ou silence.</p>
             </div>
 
-            <button class="acc__btn" aria-expanded="false">
+            <button class="acc__btn" aria-expanded="false" type="button">
               Comment sait-on qu’un mouton “a choisi” sa posture ?
               <span class="acc__icon">+</span>
             </button>
@@ -364,7 +348,7 @@
       </div>
 
       <div class="callout">
-        <img src="assets/sheep-hero.jpg" alt="Mouton renversé, photo héro" />
+        <img src="./assets/sheep-hero.jpg" alt="Mouton renversé, photo héro" />
         <div>
           <h3>Le saviez-vous ?</h3>
           <p>
@@ -412,7 +396,8 @@
             <textarea rows="5" placeholder="Décris ton lien à la gravité..." required></textarea>
           </label>
 
-          <button class="btn primary" type="button" onclick="alert('Demande envoyée au Conseil de Laine (délai variable selon la Lune).')">
+          <button class="btn primary" type="button"
+            onclick="alert('Demande envoyée au Conseil de Laine (délai variable selon la Lune).')">
             Envoyer à l’Ordre
           </button>
 
@@ -427,13 +412,13 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p>
-        © <span id="year"></span> — L’Ordre du Mouton Renversé. 
+        © <span id="year"></span> — L’Ordre du Mouton Renversé.
         <span class="muted">Communauté vibratoire autonome (pas une secte).</span>
       </p>
       <a href="#accueil">↑ Remonter vers la laine</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
