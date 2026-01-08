@@ -115,7 +115,7 @@ img{ max-width:100%; display:block; }
 .hero__bg{
   position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(10,14,11,.15), rgba(10,14,11,.85)),
+    linear-gradient(180deg, rgba(10,14,11,.05), rgba(10,14,11,.45)),
     url("assets/bg-hero.jpg") center/cover no-repeat;
   filter: saturate(1.05) contrast(1.05);
   transform: scale(1.02);
