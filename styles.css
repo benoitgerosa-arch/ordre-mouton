@@ -425,15 +425,6 @@ input:focus, textarea:focus{
   html{ scroll-behavior:auto; }
 }
 
-
 /* === HERO: enlever le gros voile noir + réduire le “vide” === */
 .hero { border-bottom: 0 !important; }
 
-.hero__bg{
-  /* Fond = image quasi pure + tout petit voile pour la lisibilité */
-  background:
-    linear-gradient(180deg, rgba(10,14,11,.02), rgba(10,14,11,.18)),
-    url("./assets/bg-hero.jpg") center/cover no-repeat !important;
-  filter: saturate(1.05) contrast(1.05) !important;
-  transform: none !important;
-}
