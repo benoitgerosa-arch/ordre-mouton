@@ -437,3 +437,37 @@ input:focus, textarea:focus{
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
 }
+
+/* === GRAIN / PAPIER (pro) sur les sections texturées === */
+.textured{
+  position: relative;
+  isolation: isolate; /* évite des effets bizarres de z-index */
+}
+
+/* couche grain (au-dessus de la texture, mais sous le contenu) */
+.textured::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index: 0;               /* même niveau que ::before mais on gère l'ordre avec opacity */
+  pointer-events:none;
+  opacity: .10;             /* ajuste 0.06 → 0.14 */
+  mix-blend-mode: overlay;  /* joli sur fond sombre */
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.10) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,.08) 0 1px, transparent 2px),
+    radial-gradient(circle at 85% 20%, rgba(0,0,0,.10) 0 1px, transparent 2px);
+  background-size: 120px 120px, 140px 140px, 160px 160px, 180px 180px;
+  filter: blur(.2px);
+}
+
+/* on s'assure que la texture (::before) reste derrière le grain */
+.textured::before{ z-index: 0; opacity: .11; }
+.textured .container{ position: relative; z-index: 1; }
+
+/* optionnel : “papier” un peu plus chaud */
+.textured--qui::before,
+.textured--faq::before{
+  filter: blur(2px) saturate(1.05) contrast(1.02);
+}
