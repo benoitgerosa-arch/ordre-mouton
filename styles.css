@@ -425,6 +425,3 @@ input:focus, textarea:focus{
   html{ scroll-behavior:auto; }
 }
 
-/* === HERO: enlever le gros voile noir + réduire le “vide” === */
-.hero { border-bottom: 0 !important; }
-
