@@ -402,3 +402,57 @@ input:focus, textarea:focus{
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
 }
+/* === Texture "parchemin" élégante en fond (sans doublon) === */
+
+/* On enlève le gros visuel-image si tu l'avais gardé */
+.panel--media{ display:none; }
+
+/* Base : rendre les panels compatibles fond image */
+.panel{
+  position: relative;
+  overflow: hidden;
+}
+
+/* QUI: applique une texture discrète à la section #qui */
+#qui{
+  position: relative;
+}
+#qui::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("./assets/page-qui.png") center/cover no-repeat;
+  opacity: .10;              /* clé: très faible */
+  filter: blur(2px) saturate(1.05);
+  transform: scale(1.03);
+  pointer-events:none;
+}
+#qui .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* FAQ: texture dédiée */
+#faq{
+  position: relative;
+}
+#faq::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("./assets/page-faq.png") center/cover no-repeat;
+  opacity: .10;
+  filter: blur(2px) saturate(1.05);
+  transform: scale(1.03);
+  pointer-events:none;
+}
+#faq .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* Lisibilité: on donne un fond un peu plus clair aux panels sur ces sections */
+#qui .panel, #faq .panel{
+  background: rgba(19,26,20,.55);
+  backdrop-filter: blur(10px);
+}
