@@ -31,7 +31,7 @@ img{ max-width:100%; display:block; }
   margin:0 auto;
 }
 
-/* Topbar (desktop + mobile sans menu déroulant) */
+/* Topbar */
 .topbar{
   position:sticky;
   top:0;
@@ -41,14 +41,14 @@ img{ max-width:100%; display:block; }
   justify-content:space-between;
   gap:1rem;
   padding:.65rem 1rem;
-  background: rgba(10,14,11,.40); /* plus clair */
+  background: rgba(10,14,11,.30);
   backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid rgba(233,239,232,.10);
 }
 
 .brand{ display:flex; align-items:center; gap:.65rem; }
 .brand__logo{
-  width:38px; height:38px; border-radius:10px;
+  width:40px; height:40px; border-radius:10px;
   border:1px solid rgba(217,182,107,.25);
   box-shadow: 0 10px 25px rgba(0,0,0,.25);
 }
@@ -59,14 +59,11 @@ img{ max-width:100%; display:block; }
   display:flex;
   align-items:center;
   gap:.55rem;
-  flex-wrap: wrap; /* en mobile: pas de burger, on wrap */
-  justify-content:flex-end;
 }
 .nav a{
   padding:.38rem .55rem;
   border-radius:10px;
   color:rgba(233,239,232,.92);
-  border:1px solid transparent;
 }
 .nav a:hover{ background: rgba(233,239,232,.06); }
 .nav .cta{
@@ -74,7 +71,7 @@ img{ max-width:100%; display:block; }
   border:1px solid rgba(217,182,107,.32);
 }
 
-/* Burger et menu mobile SUPPRIMÉS */
+/* No mobile dropdown */
 .burger{ display:none !important; }
 .mobileMenu{ display:none !important; }
 
@@ -83,7 +80,6 @@ img{ max-width:100%; display:block; }
 .hero__bg{
   position:absolute; inset:0;
   background:
-    /* voile beaucoup plus léger pour voir le fond */
     linear-gradient(180deg, rgba(10,14,11,.05), rgba(10,14,11,.35)),
     url("./assets/bg-hero.jpg") center/cover no-repeat;
   filter: saturate(1.05) contrast(1.05);
@@ -95,17 +91,16 @@ img{ max-width:100%; display:block; }
   display:grid;
   grid-template-columns: 1.25fr .75fr;
   gap:1.25rem;
-  align-items: start;
 }
 .glass{
-  background: rgba(19,26,20,.50);
+  background: rgba(19,26,20,.52);
   border:1px solid rgba(233,239,232,.12);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 }
 
 .hero__card{
-  padding:1.2rem 1.15rem;
+  padding:1.35rem 1.25rem;
   border-radius:18px;
 }
 .kicker{
@@ -154,7 +149,7 @@ h1{ margin:.2rem 0 .35rem; font-size:2.2rem; letter-spacing:.2px; }
 }
 
 .hero__aside{
-  padding:1.05rem 1rem;
+  padding:1.1rem 1rem;
   border-radius:18px;
 }
 .hero__aside h3{ margin:.15rem 0 .35rem; }
@@ -178,7 +173,7 @@ h1{ margin:.2rem 0 .35rem; font-size:2.2rem; letter-spacing:.2px; }
 }
 
 /* Sections */
-.section{ padding: 3rem 0; }
+.section{ padding: 3rem 0; position: relative; }
 .section--alt{ background: rgba(233,239,232,.03); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 
 .section__header{ margin-bottom:1.25rem; }
@@ -195,6 +190,8 @@ h1{ margin:.2rem 0 .35rem; font-size:2.2rem; letter-spacing:.2px; }
   border-radius:18px;
   padding:1.05rem 1rem;
   box-shadow: 0 14px 45px rgba(0,0,0,.25);
+  position: relative;
+  overflow: hidden;
 }
 .panel--media img{
   border-radius:14px;
@@ -373,6 +370,33 @@ input:focus, textarea:focus{
   color: rgba(217,182,107,.95);
 }
 
+/* === Textures de fond (sans doublon) === */
+.textured{ position:relative; overflow:hidden; }
+.textured::before{
+  content:"";
+  position:absolute;
+  inset:-24px;
+  opacity:.12;
+  filter: blur(2px) saturate(1.05);
+  transform: scale(1.05);
+  pointer-events:none;
+  z-index:0;
+}
+.textured .container{ position:relative; z-index:1; }
+
+.textured--qui::before{
+  background: url("./assets/page-qui.png") center/cover no-repeat;
+}
+.textured--faq::before{
+  background: url("./assets/page-faq.png") center/cover no-repeat;
+}
+
+/* lisibilité sur sections texturées */
+.textured .panel{
+  background: rgba(19,26,20,.58);
+  backdrop-filter: blur(10px);
+}
+
 /* Responsive */
 @media (max-width: 980px){
   .hero__content{ grid-template-columns: 1fr; }
@@ -386,76 +410,30 @@ input:focus, textarea:focus{
   .faq__cta{ flex-direction:column; align-items:stretch; }
 }
 
-/* Sur mobile : on garde la nav visible, juste compacte */
+/* Mobile: nav en 1 ligne scrollable (sans dropdown) */
 @media (max-width: 860px){
-  .topbar{
-    gap:.6rem;
-    padding:.55rem .8rem;
+  .topbar{ padding:.55rem .75rem; gap:.6rem; }
+  .brand__text small{ display:none; }
+
+  .nav{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap:.35rem;
+    max-width: 72vw;
+    scrollbar-width: none;
   }
-  .nav a{
-    padding:.32rem .48rem;
-    font-size:.95rem;
-  }
-  .brand__text small{ display:none; } /* compact */
+  .nav::-webkit-scrollbar{ display:none; }
+
+  .nav a{ flex: 0 0 auto; font-size:.95rem; padding:.28rem .45rem; }
+}
+
+/* Anchors: éviter d’être caché sous la topbar sticky */
+#accueil, #qui, #vision, #grades, #rituels, #faq, #temoignages, #rejoindre, #contact{
+  scroll-margin-top: 90px;
 }
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
 }
-/* === Texture "parchemin" élégante en fond (sans doublon) === */
-
-/* On enlève le gros visuel-image si tu l'avais gardé */
-.panel--media{ display:none; }
-
-/* Base : rendre les panels compatibles fond image */
-.panel{
-  position: relative;
-  overflow: hidden;
-}
-
-/* QUI: applique une texture discrète à la section #qui */
-#qui{
-  position: relative;
-}
-#qui::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: url("./assets/page-qui.png") center/cover no-repeat;
-  opacity: .10;              /* clé: très faible */
-  filter: blur(2px) saturate(1.05);
-  transform: scale(1.03);
-  pointer-events:none;
-}
-#qui .container{
-  position: relative;
-  z-index: 1;
-}
-
-/* FAQ: texture dédiée */
-#faq{
-  position: relative;
-}
-#faq::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: url("./assets/page-faq.png") center/cover no-repeat;
-  opacity: .10;
-  filter: blur(2px) saturate(1.05);
-  transform: scale(1.03);
-  pointer-events:none;
-}
-#faq .container{
-  position: relative;
-  z-index: 1;
-}
-
-/* Lisibilité: on donne un fond un peu plus clair aux panels sur ces sections */
-#qui .panel, #faq .panel{
-  background: rgba(19,26,20,.55);
-  backdrop-filter: blur(10px);
-
-}
-
-body { outline: 6px solid red !important; }
