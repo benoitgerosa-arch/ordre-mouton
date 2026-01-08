@@ -455,4 +455,7 @@ input:focus, textarea:focus{
 #qui .panel, #faq .panel{
   background: rgba(19,26,20,.55);
   backdrop-filter: blur(10px);
+
 }
+
+body { outline: 6px solid red !important; }
